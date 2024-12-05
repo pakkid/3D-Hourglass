@@ -11,19 +11,22 @@ camera.position.z = 5;
 
 const controls = new OrbitControls(camera, renderer.domElement);
 
-const hourglassGeometry = new THREE.CylinderGeometry(1, 1, 3, 32);
+// Create hourglass geometry
+const hourglassGeometry = new THREE.CylinderGeometry(1, 1, 3, 32, 1, true);
 const hourglassMaterial = new THREE.MeshBasicMaterial({ color: 0x8B4513, wireframe: true });
 const hourglass = new THREE.Mesh(hourglassGeometry, hourglassMaterial);
+hourglass.rotation.x = Math.PI / 2;
 scene.add(hourglass);
 
+// Create sand particles
 const sandParticles = [];
 const sandMaterial = new THREE.PointsMaterial({ color: 0xFFD700, size: 0.05 });
 
 for (let i = 0; i < 1000; i++) {
     const particle = new THREE.Vector3(
-        (Math.random() - 0.5) * 2,
-        (Math.random() - 0.5) * 2,
-        (Math.random() - 0.5) * 2
+        (Math.random() - 0.5) * 1.8,
+        (Math.random() - 0.5) * 1.8,
+        (Math.random() - 0.5) * 1.8
     );
     sandParticles.push(particle);
 }
