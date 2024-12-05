@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Hourglass Simulation</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <canvas id="hourglassCanvas"></canvas>
+    <div class="controls">
+        <label for="timeSlider">Simulation Time:</label>
+        <input type="range" id="timeSlider" class="slider" min="1" max="10" value="5">
+        <label for="holeSizeSlider">Hole Size:</label>
+        <input type="range" id="holeSizeSlider" class="slider" min="1" max="10" value="5">
+    </div>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.171.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.171.0/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="module" src="static/script.js"></script>
+</body>
+</html>
